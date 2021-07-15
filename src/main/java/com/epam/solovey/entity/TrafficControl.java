@@ -43,7 +43,7 @@ public class TrafficControl {
             while (availableTunnels.isEmpty()){
                 condition.await();
             }
-            if(train.getTrainDestination() == Train.Destination.WEST && iterationCount() % 2 == 0){
+            if(train.getTrainDestination() == Train.Destination.WEST && iterationCount() % 2 != 0){
                 waitingTrains.addFirst(condition);
             } else {
                 waitingTrains.addLast(condition);
